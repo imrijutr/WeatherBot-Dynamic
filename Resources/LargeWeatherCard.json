@@ -36,19 +36,15 @@
                           "type": "TextBlock",
                           "text": "63 / 42",
                           "size": "Medium",
-                          "spacing": "None"
+                          "spacing": "None",
+                          "color":"light"
                       },
                       {
                           "type": "TextBlock",
-                          "isSubtle": true,
-                          "text": "20% chance of rain",
-                          "spacing": "None"
-                      },
-                      {
-                          "type": "TextBlock",
-                          "isSubtle": true,
-                          "text": "Winds 5 mph NE",
-                          "spacing": "None"
+                          "size":"medium",
+                          "text": "Chennai",
+                          "spacing": "None",
+                          "color":"light"
                       }
                   ]
               }

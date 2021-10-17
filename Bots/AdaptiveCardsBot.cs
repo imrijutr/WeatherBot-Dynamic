@@ -39,15 +39,15 @@ namespace Microsoft.BotBuilderSamples
         {
             await SendWelcomeMessageAsync(turnContext, cancellationToken);
         }
-        protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
-        {
-            Random r = new Random();
-            var cardAttachment = CreateAdaptiveCardAttachment(_cards[r.Next(_cards.Length)]);
+        // protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        // {
+        //     Random r = new Random();
+        //     var cardAttachment = CreateAdaptiveCardAttachment(_cards[r.Next(_cards.Length)]);
 
-            turnContext.Activity.Attachments = new List<Attachment>() { cardAttachment };
-            await turnContext.SendActivityAsync(MessageFactory.Attachment(cardAttachment), cancellationToken);
-            await turnContext.SendActivityAsync(MessageFactory.Text("Please enter another city name"), cancellationToken);
-        }
+        //     turnContext.Activity.Attachments = new List<Attachment>() { cardAttachment };
+        //     await turnContext.SendActivityAsync(MessageFactory.Attachment(cardAttachment), cancellationToken);
+        //     await turnContext.SendActivityAsync(MessageFactory.Text("Please enter another city name"), cancellationToken);
+        // }
 
         private static async Task SendWelcomeMessageAsync(ITurnContext turnContext, CancellationToken cancellationToken)
         {
@@ -86,31 +86,31 @@ namespace Microsoft.BotBuilderSamples
         }
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            var client = new OpenWeatherMapClient("47d4faed8ac5819xxxxxxxxxx");
+            var client = new OpenWeatherMapClient("bcf5adf0f7e061d9d1c47e9b12fcffde");
             var CloudImage = "http://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png";
-            var rainImage  = "./Resources/rain.png";
-            var stormImage = "./Resources/storm.png";
-            var sunImage = "./Resources/sun.png";
+            var rainImage  = "https://raw.githubusercontent.com/imrijutr/WeatherBot-Dynamic/master/Resources/rain.png";
+            var stormImage = "https://raw.githubusercontent.com/imrijutr/WeatherBot-Dynamic/master/Resources/storm.png";
+            var sunImage = "https://raw.githubusercontent.com/imrijutr/WeatherBot-Dynamic/master/Resources/sun.png";
             var currentWeather = await client.CurrentWeather.GetByName(turnContext.Activity.Text);
             var search =await client.Search.GetByName("Chennai");
             var forcast  = await client.Forecast.GetByName("Chennai");
             var curtTemp = currentWeather.Temperature.Value - 273.15;
-            var MaxTemp  = currentWeather.Temperature.Max -273.15;
-            var MinTemp  = currentWeather.Temperature.Min -273.15;
+            // var MaxTemp  = currentWeather.Temperature.Max -273.15;
+            // var MinTemp  = currentWeather.Temperature.Min -273.15;
             var updateCard = readFileforUpdate_jobj(_cards[0]);
-            JToken cityName = updateCard.SelectToken("body[0].text");
-            JToken tdyDate = updateCard.SelectToken("body[1].text");
-            JToken curTemp = updateCard.SelectToken("body[2].columns[1].items[0].text");
-            JToken maxTem = updateCard.SelectToken("body[2].columns[3].items[0].text");
-            JToken minTem = updateCard.SelectToken("body[2].columns[3].items[1].text");
-            JToken weatherImageUrl = updateCard.SelectToken("body[2].columns[0].items[0].url");
+            JToken cityName = updateCard.SelectToken("body[0].columns[1].items[2].text");
+            JToken tdyDate = updateCard.SelectToken("body[0].columns[1].items[0].text");
+            JToken curTemp = updateCard.SelectToken("body[0].columns[1].items[1].text");
+            // JToken maxTem = updateCard.SelectToken("body[2].columns[3].items[0].text");
+            // JToken minTem = updateCard.SelectToken("body[2].columns[3].items[1].text");
+            JToken weatherImageUrl = updateCard.SelectToken("body[0].columns[0].items[0].url");
 
  
             cityName.Replace(currentWeather.City.Name);
-            curTemp.Replace(curtTemp.ToString("N0"));
+            curTemp.Replace(curtTemp.ToString("N0\u00B0C"));
             tdyDate.Replace(DateTime.Now.ToString("dddd, dd MMMM yyyy"));
-            maxTem.Replace("Max" +" "+MaxTemp.ToString("N0"));
-            minTem.Replace("Min" + " "+MinTemp.ToString("N0"));
+            // maxTem.Replace("Max" +" "+MaxTemp.ToString("N0"));
+            // minTem.Replace("Min" + " "+MinTemp.ToString("N0"));
             var n = currentWeather.Clouds.Name;
            
             if(n=="overcast clouds")
@@ -137,6 +137,7 @@ namespace Microsoft.BotBuilderSamples
             var updateWeatherTem = UpdateAdaptivecardAttachment(updateCard);
           
             await turnContext.SendActivityAsync(MessageFactory.Attachment(updateWeatherTem), cancellationToken);
+            await turnContext.SendActivityAsync(MessageFactory.Text("Please enter another city name"));
             
         }
         private static Attachment CreateAdaptiveCardAttachment(string filePath)
