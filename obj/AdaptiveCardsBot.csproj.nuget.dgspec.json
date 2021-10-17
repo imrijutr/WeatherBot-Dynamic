@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot\\AdaptiveCardsBot.csproj": {}
+    "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot V2\\AdaptiveCardsBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot\\AdaptiveCardsBot.csproj": {
+    "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot V2\\AdaptiveCardsBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot\\AdaptiveCardsBot.csproj",
+        "projectUniqueName": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot V2\\AdaptiveCardsBot.csproj",
         "projectName": "AdaptiveCardsBot",
-        "projectPath": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot\\AdaptiveCardsBot.csproj",
+        "projectPath": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot V2\\AdaptiveCardsBot.csproj",
         "packagesPath": "C:\\Users\\Riju T R\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot\\obj\\",
+        "outputPath": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot V2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,6 +56,10 @@
             "Microsoft.Bot.Builder.Integration.AspNet.Core": {
               "target": "Package",
               "version": "[4.14.1, )"
+            },
+            "OpenWeatherMap": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [

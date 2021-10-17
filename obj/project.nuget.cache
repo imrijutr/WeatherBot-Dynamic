@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S5qP/e+0cF2n6IB6gQHnfIcxBWQqb3U31baRljGm66kv7SLE/Lm/rQgVglE5L582NrPCyGf8Ewnst9GtFByVpA==",
+  "dgSpecHash": "VQ1xR2kgmmk2klnqaI/LTWaKvhvHZ7zKJuSQqgH6oSzXBH1fCHToTW0jw4wBEzp4DHQLB1wHeIEEEKJTsPReaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot\\AdaptiveCardsBot.csproj",
+  "projectFilePath": "C:\\Users\\Riju T R\\Desktop\\Bot\\WeatherBot V2\\AdaptiveCardsBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Riju T R\\.nuget\\packages\\adaptivecards\\1.0.3\\adaptivecards.1.0.3.nupkg.sha512",
     "C:\\Users\\Riju T R\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.1\\microsoft.aspnetcore.jsonpatch.3.1.1.nupkg.sha512",
@@ -47,6 +47,7 @@
     "C:\\Users\\Riju T R\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Riju T R\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Riju T R\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Riju T R\\.nuget\\packages\\openweathermap\\1.1.0\\openweathermap.1.1.0.nupkg.sha512",
     "C:\\Users\\Riju T R\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Riju T R\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Riju T R\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
