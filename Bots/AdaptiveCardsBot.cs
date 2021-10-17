@@ -27,7 +27,7 @@ namespace Microsoft.BotBuilderSamples
 
     public class AdaptiveCardsBot : ActivityHandler 
     {
-        private const string WelcomeText = @"This bot will be help you to know weather update. Please send a city name.";
+        private const string WelcomeText = @"Ask me about weather update. Please send your location !";
 
         // This array contains the file location of our adaptive cards
         private readonly string[] _cards =
@@ -56,7 +56,7 @@ namespace Microsoft.BotBuilderSamples
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
                     await turnContext.SendActivityAsync(
-                        $"Welcome to weatherBot. {member.Name}. {WelcomeText}",
+                        $"Welcome to weatherBot. {WelcomeText}",
                         cancellationToken: cancellationToken);
                 }
             }
@@ -125,7 +125,7 @@ namespace Microsoft.BotBuilderSamples
             {
                 weatherImageUrl.Replace(sunImage);
             }
-            else if (n.Contains("rain"))
+            else if (n.Contains("rai"))
             {
              weatherImageUrl.Replace(rainImage);
             }
