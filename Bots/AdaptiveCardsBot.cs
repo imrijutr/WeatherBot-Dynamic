@@ -125,7 +125,7 @@ namespace Microsoft.BotBuilderSamples
             {
                 weatherImageUrl.Replace(sunImage);
             }
-            else if (n.Contains("rai"))
+            else if (n.Contains("rain"))
             {
              weatherImageUrl.Replace(rainImage);
             }
